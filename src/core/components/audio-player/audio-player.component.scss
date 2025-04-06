@@ -1,0 +1,17 @@
+.container {
+  padding: 20px;
+  border-radius: 12px;
+  background: #f5f5f5;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.track-title {
+  color: #2c3e50;
+  margin-bottom: 15px;
+  font-family: 'Arial', sans-serif;
+}
+
+.audio-element {
+  width: 100%;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+}

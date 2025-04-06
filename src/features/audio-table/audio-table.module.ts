@@ -5,12 +5,15 @@ import {HttpClientModule} from "@angular/common/http";
 import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 import {MatTableModule} from "@angular/material/table";
 import {MatPaginatorModule} from "@angular/material/paginator";
+import {AudioPlayerModule} from "../../core/components/audio-player/audio-player.module";
+import { ResponsiveColumnsDirective } from './directives/responsive-columns.directive';
 
 
 
 @NgModule({
   declarations: [
-    AudioTableComponent
+    AudioTableComponent,
+    ResponsiveColumnsDirective
   ],
   exports: [
     AudioTableComponent
@@ -20,7 +23,8 @@ import {MatPaginatorModule} from "@angular/material/paginator";
     HttpClientModule,
     MatProgressSpinnerModule,
     MatTableModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    AudioPlayerModule
   ]
 })
 export class AudioTableModule { }

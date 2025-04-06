@@ -3,13 +3,20 @@ import {Audio} from "../../core/models/audio";
 import {AudioService} from "./services/audio.service";
 import {catchError, finalize, of} from "rxjs";
 
+const DEFAULT_COLUMNS = ['id', 'name', 'fileName'];
+const COLUMN_RULES = [
+  { breakpoint: 700, columns: ['id', 'name'] }
+]
+
 @Component({
   selector: 'app-audio-table',
   templateUrl: './audio-table.component.html',
   styleUrls: ['./audio-table.component.scss']
 })
 export class AudioTableComponent implements OnInit {
-  displayedColumns: string[] = ['id', 'name', 'fileName'];
+  displayedColumns: string[] = [...DEFAULT_COLUMNS];
+  defaultColumns: string[] = [...DEFAULT_COLUMNS];
+  columnRules = structuredClone(COLUMN_RULES);
   audios: Audio[] = [];
   selectedAudio: Audio | null = null;
 

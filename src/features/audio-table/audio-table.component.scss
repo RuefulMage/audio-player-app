@@ -19,6 +19,10 @@
   font-weight: bold;
 }
 
+.table-wrapper {
+  position: relative;
+}
+
 .table {
   width: 100%;
 }
@@ -26,4 +30,14 @@
 .mat-cell,
 .mat-header-cell {
   padding: 8px;
+}
+
+.player {
+  position: sticky;
+  bottom: 0;
+  background-color: white;
+  z-index: 10;
+  padding: 8px 16px;
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+  border-top: 1px solid #ccc;
 }

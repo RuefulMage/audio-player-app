@@ -9,8 +9,17 @@
     {{ errorMessage }}
   </div>
 
-  <div class="mat-elevation-z8" *ngIf="!isLoading && !errorMessage">
-    <table mat-table [dataSource]="audios" class="mat-table table">
+  <div class="mat-elevation-z8 table-wrapper" *ngIf="!isLoading && !errorMessage">
+    <table
+      mat-table
+      appResponsiveColumns
+      [columnRules]="columnRules"
+      [defaultColumns]="defaultColumns"
+      [displayedColumns]="displayedColumns"
+      [dataSource]="audios"
+      class="mat-table table"
+
+    >
       <ng-container matColumnDef="id">
         <th mat-header-cell *matHeaderCellDef> ID </th>
         <td mat-cell *matCellDef="let element"> {{ element.id }} </td>
@@ -34,5 +43,9 @@
         style="cursor: pointer">
       </tr>
     </table>
+
+    <div class="player" *ngIf="selectedAudio">
+      <app-audio-player [autoplay]="true" [selectedAudio]="selectedAudio"></app-audio-player>
+    </div>
   </div>
 </div>
