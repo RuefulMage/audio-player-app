@@ -3,6 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {InMemoryDataService} from "../core/services/InMemoryDataService";
+import {HttpClientInMemoryWebApiModule} from "angular-in-memory-web-api";
 
 @NgModule({
   declarations: [
@@ -10,7 +12,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   ],
   imports: [
     BrowserModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, { delay: 300 }),
   ],
   providers: [],
   bootstrap: [AppComponent]
