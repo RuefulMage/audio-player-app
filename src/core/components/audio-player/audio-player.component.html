@@ -1,9 +1,4 @@
 <div *ngIf="selectedAudio" class="container">
   <h3 class="track-title">{{ selectedAudio.name }}</h3>
-  <audio
-    controls
-    [autoplay]="autoplay"
-    [src]="selectedAudio.url"
-    class="audio-element"
-  ></audio>
+  <audio controls [autoplay]="autoplay" [src]="selectedAudio.url" class="audio-element"></audio>
 </div>

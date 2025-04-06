@@ -18,30 +18,29 @@
       [displayedColumns]="displayedColumns"
       [dataSource]="audios"
       class="mat-table table"
-
     >
       <ng-container matColumnDef="id">
-        <th mat-header-cell *matHeaderCellDef> ID </th>
-        <td mat-cell *matCellDef="let element"> {{ element.id }} </td>
+        <th mat-header-cell *matHeaderCellDef>ID</th>
+        <td mat-cell *matCellDef="let element">{{ element.id }}</td>
       </ng-container>
 
       <ng-container matColumnDef="name">
-        <th mat-header-cell *matHeaderCellDef> Audio name </th>
-        <td mat-cell *matCellDef="let element"> {{ element.name }} </td>
+        <th mat-header-cell *matHeaderCellDef>Audio name</th>
+        <td mat-cell *matCellDef="let element">{{ element.name }}</td>
       </ng-container>
 
       <ng-container matColumnDef="fileName">
-        <th mat-header-cell *matHeaderCellDef> File name </th>
-        <td mat-cell *matCellDef="let element"> {{ element.fileName }} </td>
+        <th mat-header-cell *matHeaderCellDef>File name</th>
+        <td mat-cell *matCellDef="let element">{{ element.fileName }}</td>
       </ng-container>
 
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
       <tr
         mat-row
-        *matRowDef="let row; columns: displayedColumns;"
+        *matRowDef="let row; columns: displayedColumns"
         (click)="selectAudio(row)"
-        style="cursor: pointer">
-      </tr>
+        style="cursor: pointer"
+      ></tr>
     </table>
 
     <div class="player" *ngIf="selectedAudio">

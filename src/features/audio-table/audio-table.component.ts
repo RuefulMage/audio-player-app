@@ -1,17 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import {Audio} from "../../core/models/audio";
-import {AudioService} from "./services/audio.service";
-import {catchError, finalize, of} from "rxjs";
+import { Audio } from '../../core/models/audio';
+import { AudioService } from './services/audio.service';
+import { catchError, finalize, of } from 'rxjs';
 
 const DEFAULT_COLUMNS = ['id', 'name', 'fileName'];
-const COLUMN_RULES = [
-  { breakpoint: 700, columns: ['id', 'name'] }
-]
+const COLUMN_RULES = [{ breakpoint: 700, columns: ['id', 'name'] }];
 
 @Component({
   selector: 'app-audio-table',
   templateUrl: './audio-table.component.html',
-  styleUrls: ['./audio-table.component.scss']
+  styleUrls: ['./audio-table.component.scss'],
 })
 export class AudioTableComponent implements OnInit {
   displayedColumns: string[] = [...DEFAULT_COLUMNS];
@@ -23,7 +21,7 @@ export class AudioTableComponent implements OnInit {
   isLoading = false;
   errorMessage = '';
 
-  constructor(private audioService: AudioService) { }
+  constructor(private audioService: AudioService) {}
 
   ngOnInit(): void {
     this.getAudios();
@@ -32,19 +30,20 @@ export class AudioTableComponent implements OnInit {
   getAudios(): void {
     this.isLoading = true;
 
-    this.audioService.getAudios()
+    this.audioService
+      .getAudios()
       .pipe(
-        catchError(error => {
+        catchError((error) => {
           console.error(error);
           this.errorMessage = 'Failed to load audio list. Try again later.';
           return of([]);
         }),
         finalize(() => {
           this.isLoading = false;
-        })
+        }),
       )
       .subscribe((data) => {
-        this.audios = data
+        this.audios = data;
 
         console.log(data);
       });
