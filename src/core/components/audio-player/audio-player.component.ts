@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { Audio } from '../../models/audio';
+
+import { Audio } from '@core/models/audio';
 
 @Component({
   selector: 'app-audio-player',

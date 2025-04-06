@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+
+import { InMemoryDataService } from '@core/services/InMemoryDataService';
+import { AudioTableModule } from '@features/audio-table/audio-table.module';
 
 import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { InMemoryDataService } from '../core/services/InMemoryDataService';
-import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { AudioTableModule } from '../features/audio-table/audio-table.module';
 
 @NgModule({
   declarations: [AppComponent],

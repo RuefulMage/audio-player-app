@@ -1,6 +1,7 @@
-import { Audio } from '../models/audio';
 import { InMemoryDbService } from 'angular-in-memory-web-api';
-import { MOCK_AUDIOS } from '../constants/audios';
+
+import { Audio } from '@core/models/audio';
+import { MOCK_AUDIOS } from '@core/constants/audios';
 
 export class InMemoryDataService implements InMemoryDbService {
   createDb() {

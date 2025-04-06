@@ -1,12 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AudioTableComponent } from './audio-table.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
-import { AudioPlayerModule } from '../../core/components/audio-player/audio-player.module';
+
+import { AudioPlayerModule } from '@core/components/audio-player/audio-player.module';
+
 import { ResponsiveColumnsDirective } from './directives/responsive-columns.directive';
+import { AudioTableComponent } from './audio-table.component';
 
 @NgModule({
   declarations: [AudioTableComponent, ResponsiveColumnsDirective],

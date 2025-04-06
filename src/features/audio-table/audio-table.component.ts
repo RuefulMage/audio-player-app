@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Audio } from '../../core/models/audio';
-import { AudioService } from './services/audio.service';
 import { catchError, finalize, of } from 'rxjs';
+
+import { Audio } from '@core/models/audio';
+
+import { AudioService } from './services/audio.service';
 
 const DEFAULT_COLUMNS = ['id', 'name', 'fileName'];
 const COLUMN_RULES = [{ breakpoint: 700, columns: ['id', 'name'] }];

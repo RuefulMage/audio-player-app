@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Audio } from '../../../core/models/audio';
+
+import { Audio } from '@core/models/audio';
 
 const AUDIO_LIST_URL = 'api/audios';
 

@@ -1,4 +1,4 @@
-import { Audio } from '../models/audio';
+import { Audio } from '@core/models/audio';
 
 export const MOCK_AUDIOS: Audio[] = [
   {
