@@ -23,7 +23,7 @@ export class AudioTableComponent implements OnInit {
   }
 
   getAudios(): void {
-    this.audioService.getAudios().subscribe((data) => this.audios = data);
+    this.isLoading = true;
 
     this.audioService.getAudios()
       .pipe(
